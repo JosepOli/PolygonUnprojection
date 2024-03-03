@@ -26,4 +26,22 @@ public class Point2DTest {
                 () -> assertEquals(4.0, point.getY(), "Y coordinate should be 4.0 after setY")
                 );
     }
+
+    @Test
+    public void testEquals() {
+        Point2D point1 = new Point2D(1.0, 2.0);
+        Point2D point2 = new Point2D(1.0, 2.0);
+        Point2D point3 = new Point2D(2.0, 1.0);
+
+        assertEquals(point1, point2, "Points with same coordinates should be equal.");
+        assertNotEquals(point1, point3, "Points with different coordinates should not be equal.");
+    }
+
+    @Test
+    public void testHashCode() {
+        Point2D point1 = new Point2D(1.0, 2.0);
+        Point2D point2 = new Point2D(1.0, 2.0);
+
+        assertEquals(point1.hashCode(), point2.hashCode(), "Hash codes should be equal for points with same coordinates.");
+    }
 }
