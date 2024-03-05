@@ -40,9 +40,11 @@ public class PolygonTransformerTest {
     }
 
     private void assertPoint3DEquals(Point3D expected, Point3D actual) {
-        assertEquals(expected.getX(), actual.getX(), "X coordinate should match expected value.");
-        assertEquals(expected.getY(), actual.getY(), "Y coordinate should match expected value.");
-        assertEquals(expected.getZ(), actual.getZ(), "Z coordinate should match expected value.");
+        final double DELTA = 0.0001; // Define a small delta for floating-point comparisons
+        assertEquals(expected.getX(), actual.getX(), DELTA, "X coordinate should match expected value.");
+        assertEquals(expected.getY(), actual.getY(), DELTA, "Y coordinate should match expected value.");
+        assertEquals(expected.getZ(), actual.getZ(), DELTA, "Z coordinate should match expected value.");
     }
+
 }
 
